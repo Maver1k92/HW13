@@ -1,17 +1,12 @@
 package main.java.goit.https;
 
-import java.util.Objects;
-
 public class User {
     private int id;
     private String name;
     private String username;
     private String email;
-    private String website;
-    private Address address;
-    private Company company;
-
-
+    private String address;
+    private String phone;
 
     public int getId() {
         return id;
@@ -45,55 +40,30 @@ public class User {
         this.email = email;
     }
 
-    public String getWebsite() {
-        return website;
-    }
-
-    public void setWebsite(String website) {
-        this.website = website;
-    }
-
-    public Address getAddress() {
+    public String getAddress() {
         return address;
     }
 
-    public void setAddress(Address address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
-    public Company getCompany() {
-        return company;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setCompany(Company company) {
-        this.company = company;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return id == user.id && Objects.equals(name, user.name) && Objects.equals(username, user.username) && Objects.equals(email, user.email) && Objects.equals(website, user.website) && Objects.equals(address, user.address) && Objects.equals(company, user.company);
+    public User(String name,String username, String email, String address, String phone) {
+        this.name = name;
+        this.username = username;
+        this.email = email;
+        this.address = address;
+        this.phone = phone;
     }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, username, email, website, address, company);
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", username='" + username + '\'' +
-                ", email='" + email + '\'' +
-                ", website='" + website + '\'' +
-                ", address=" + address +
-                ", company=" + company +
-                '}';
-    }
-
-
 }
+
+
+
